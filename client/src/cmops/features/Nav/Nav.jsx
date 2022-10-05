@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function Nav() {
   const [color, setColor] = useState(false);
-  const selector =useSelector(state =>state)
-  const cartLength =selector.shop.cart.length
-  const navigate = useNavigate()
+  const selector = useSelector((state) => state);
+  const cartLength = selector.shop.cart.length;
+  const navigate = useNavigate();
 
   const changeColor = () => {
     if (window.screenY >= 150) {
@@ -21,7 +21,12 @@ export default function Nav() {
       <nav className="navbar navbar-expand-lg container">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <img onClick={()=> navigate('/')} height={"30px"} src="./images/DJI-LOGO.png" alt="" />
+            <img
+              onClick={() => navigate("/")}
+              height={"30px"}
+              src="./images/DJI-LOGO.png"
+              alt=""
+            />
           </a>
           <button
             className="navbar-toggler"
@@ -38,6 +43,7 @@ export default function Nav() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a
+                  onClick={() => navigate("/")}
                   className="nav-link active text-white"
                   aria-current="page"
                   href="#"
@@ -47,7 +53,7 @@ export default function Nav() {
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#">
-                  Handheld
+                Support
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -96,15 +102,15 @@ export default function Nav() {
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-white">Support</a>
+              <li onClick={() => navigate("/cart")} className="nav-item">
+                <a className="nav-link text-white">Cart</a>
               </li>
             </ul>
             <div className="d-flex align-items-center" role="search">
               <i class="fa-solid fa-magnifying-glass fs-5 text-white"></i>
               <i class="fa-regular fa-user px-3 fs-5 text-white"></i>
               <button
-              onClick={()=>navigate("/cart")}
+                onClick={() => navigate("/cart")}
                 className="btn btn btn-primary rounded-pill "
                 type="submit"
               >
@@ -113,7 +119,6 @@ export default function Nav() {
             </div>
           </div>
         </div>
-        
       </nav>
     </div>
   );

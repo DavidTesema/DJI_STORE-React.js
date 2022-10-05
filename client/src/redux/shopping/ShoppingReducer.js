@@ -3,19 +3,18 @@ import * as actionType from "./ShoppingTypes";
 const INITIAL_STATE = {
   products: [],
   cart: [],
-  currentItem: null,
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case actionType.ADD_ALL_PRODUCT:
       return { ...state, products: action.payload };
+
     case actionType.ADD_TO_CART:
       const item = state.products.find((prod) => prod._id === action.payload);
       const inCart = state.cart.find((item) =>
         item._id === action.payload ? true : false
       );
-      console.log(inCart);
       return {
         ...state,
         cart: inCart
@@ -25,9 +24,10 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           : [...state.cart, { ...item, qty: 1 }],
       };
     case actionType.REMOVE_FROM_CART:
+      console.log(action.payload)
       return {
         ...state,
-        cart: state.cart.filter((item) => item._id !== action.payload.id),
+        cart: state.cart.filter((item) => item._id !== action.payload),
       };
     case actionType.ADJUST_QTY:
       return {
@@ -38,8 +38,6 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             : item
         ),
       };
-    case actionType.LOAD_CURRENT_ITEM:
-      return { ...state, currentItem: action.payload };
     default:
       return state;
   }

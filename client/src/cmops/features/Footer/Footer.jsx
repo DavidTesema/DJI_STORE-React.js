@@ -15,7 +15,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted  py-3">
       <section className="d-flex justify-content-center justify-content-lg-around border-bottom container">
         <div className="text-center">
         <i class="fa-solid fa-truck fs-1 my-2"></i>
@@ -33,7 +33,6 @@ export default function Footer() {
         
       </section>
      
-
       <section className="">
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">

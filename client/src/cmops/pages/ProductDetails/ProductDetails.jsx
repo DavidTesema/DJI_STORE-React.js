@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Nav from "../../features/Nav/Nav";
 import Footer from "../../features/Footer/Footer";
-import axios from "axios";
 import { useParams } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
-import { connect, Connect, useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../redux/shopping/ShoppingAction";
+import {  useDispatch, useSelector } from "react-redux";
 export default function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -75,9 +73,9 @@ export default function ProductDetails() {
   };
   const textContainer = (
     <div className="text-center">
-      <h2 className="text-white">{productData.name}</h2>
-      <p className="text-white">{productData.description}</p>
-      <h5 className="text-white">USD {productData.price}$</h5>
+      <h2 className="text-black">{productData.name}</h2>
+      <p className="text-black">{productData.description}</p>
+      <h5 className="text-black">USD {productData?.price}$</h5>
       <button
         onClick={() => addProduct()}
         className="btn btn btn-primary"
@@ -91,7 +89,7 @@ export default function ProductDetails() {
     <div>
       <Nav />
       {productDetails}
-      <div className="d-flex justify-content-around align-items-center bg-black py-5">
+      <div className="d-flex justify-content-around align-items-center text-container bg-white py-5">
         <div style={{ width: "50%" }}>
           <ProductCarousel userID={id} />
         </div>
@@ -103,10 +101,3 @@ export default function ProductDetails() {
     </div>
   );
 }
-
-// const mapDispatch = (dispatch) => {
-//   return {
-//     addToCart: (id) => dispatch(addToCart(id)),
-//   };
-// };
-// export default connect(null, mapDispatch)(ProductDetails);

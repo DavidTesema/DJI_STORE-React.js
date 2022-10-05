@@ -17,6 +17,7 @@ export default function Products() {
 
   const getData = async () => {
     const { data } = await axios.get("http://localhost:8000");
+    console.log(data);
     setData(data);
     addAllProducts();
   };
