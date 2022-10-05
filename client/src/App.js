@@ -1,10 +1,9 @@
 import React from "react";
-import HomePage from "./cmops/HomePage/HomePage";
-import Button from "react-bootstrap/Button";
+import HomePage from "./cmops/pages/HomePage/HomePage";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
-import ProductDetails from "./cmops/ProductDetails/ProductDetails";
-import CarouselProduct from "./cmops/Header/CarouselProduct";
+import ProductDetails from "./cmops/pages/ProductDetails/ProductDetails";
+import Cart from "./cmops/pages/Cart/Cart";
 export default function App() {
   return (
     <div>
@@ -12,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

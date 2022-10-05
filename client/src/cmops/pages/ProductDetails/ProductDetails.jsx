@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
+import Nav from "../../features/Nav/Nav";
+import Footer from "../../features/Footer/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
 import { connect, Connect, useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/shopping/ShoppingAction";
+import { addToCart } from "../../../redux/shopping/ShoppingAction";
 export default function ProductDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();

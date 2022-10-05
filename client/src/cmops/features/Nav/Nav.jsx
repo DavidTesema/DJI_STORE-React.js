@@ -104,15 +104,16 @@ export default function Nav() {
               <i class="fa-solid fa-magnifying-glass fs-5 text-white"></i>
               <i class="fa-regular fa-user px-3 fs-5 text-white"></i>
               <button
+              onClick={()=>navigate("/cart")}
                 className="btn btn btn-primary rounded-pill "
                 type="submit"
               >
-                <i class="fa-sharp fa-solid fa-bag-shopping"></i> Store
+                <i class="fa-solid fa-cart-shopping"></i> {cartLength}
               </button>
             </div>
           </div>
         </div>
-        {cartLength}
+        
       </nav>
     </div>
   );
