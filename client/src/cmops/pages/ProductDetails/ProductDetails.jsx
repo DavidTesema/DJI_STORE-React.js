@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import Nav from "../../features/Nav/Nav";
+import Aos from "aos"
+import "aos/dist/aos.css"
 import Footer from "../../features/Footer/Footer";
 import { useParams } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
 import {  useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 export default function ProductDetails() {
+  useEffect(()=>{
+    Aos.init({ 
+      duration:3000,
+    offset: 400
+    })
+  },[])
   const { id } = useParams();
   const dispatch = useDispatch();
   const [color, setColor] = useState(false);
@@ -12,25 +21,19 @@ export default function ProductDetails() {
   const allProducts = Selector.shop.products;
   const productData = allProducts?.find((item) => item._id === id);
   const productDetails = (
-    <div className={color != productData.backgroundColor ? "bg-white" : "bg-black"}>
+    <div className={color != productData.backgroundColor ? "bg-white" : "bg-black background-black"}>
       <video className="first-video" src={productData.video1} autoPlay muted />
-      <div className="content d-none d-xxl-flex mt-5 ">
-        <p>{productData.name}</p>
-        <h5>Born to Fly</h5>
-        <button type="button" class="btn btn-outline-primary fw-bold">
-          Buy Now
-        </button>
-      </div>
-      <section className="main-product">
-        <div className="d-flex align-items-center w-75 mt-5">
+      <section  className="main-product">
+        <div data-aos="fade-left" className="d-flex align-items-center w-75 mt-5">
           <img width={"75%"} src={productData.picture1} />
           <h4
             className={
               color != productData.backgroundColor
-                ? "text-black px-5"
-                : "text-white px-5"
+              ? "text-black px-5"
+              : "text-white px-5"
             }
-          >
+            >
+            <p className="fs-1">{productData.name}</p>
             {productData.title1}
           </h4>
         </div>
@@ -39,7 +42,7 @@ export default function ProductDetails() {
         ) : (
           ""
         )}
-        <div className="d-flex align-items-center justify-content-center mt-5 flex-row-reverse">
+        <div data-aos="fade-up" className="d-flex align-items-center justify-content-center mt-5 flex-row-reverse">
           <img width={"70%"} src={productData.picture2} />
           <h4
             className={
@@ -67,12 +70,8 @@ export default function ProductDetails() {
       </section>
     </div>
   );
-  const addProduct = () => {
-    const action = { type: "ADD_TO_CART", payload: productData._id };
-    dispatch(action)
-  };
   const textContainer = (
-    <div className="text-center">
+    <div data-aos="fade-right" className="text-center">
       <h2 className="text-black">{productData.name}</h2>
       <p className="text-black">{productData.description}</p>
       <h5 className="text-black">USD {productData?.price}$</h5>
@@ -85,6 +84,10 @@ export default function ProductDetails() {
       </button>
     </div>
   );
+  const addProduct = () => {
+    const action = { type: "ADD_TO_CART", payload: productData._id };
+    dispatch(action)
+  };
   return (
     <div>
       <Nav />
@@ -93,7 +96,7 @@ export default function ProductDetails() {
         <div style={{ width: "50%" }}>
           <ProductCarousel userID={id} />
         </div>
-        <div className="d-flex align-items-around " style={{ width: "30%" }}>
+        <div data-aos="fade-left" className="d-flex align-items-around " style={{ width: "30%" }}>
           {textContainer}
         </div>
       </div>

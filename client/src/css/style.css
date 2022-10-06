@@ -66,6 +66,10 @@
   font-family: T;
 }
 
+.background-black {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9556197479) 97%, rgb(255, 255, 255) 100%);
+}
+
 .cart-container {
   background-size: cover;
   font-family: sans-serif;
