@@ -23,14 +23,21 @@ export default function ProductDetails() {
   const productDetails = (
     <div className={color != productData.backgroundColor ? "bg-white" : "bg-black background-black"}>
       <video className="first-video" src={productData.video1} autoPlay muted />
+      {/* <div className="content d-none d-xxl-flex mt-5 ">
+        <p>{productData.name}</p>
+        <h5>Born to Fly</h5>
+        <button type="button" class="btn btn-outline-primary fw-bold">
+          Buy Now
+        </button>
+      </div> */}
       <section  className="main-product">
         <div data-aos="fade-left" className="d-flex align-items-center w-75 mt-5">
           <img width={"75%"} src={productData.picture1} />
           <h4
             className={
               color != productData.backgroundColor
-              ? "text-black px-5"
-              : "text-white px-5"
+              ? "text-black px-5 d-none d-md-block"
+              : "text-white px-5 d-none d-md-block"
             }
             >
             <p className="fs-1">{productData.name}</p>
@@ -42,13 +49,13 @@ export default function ProductDetails() {
         ) : (
           ""
         )}
-        <div data-aos="fade-up" className="d-flex align-items-center justify-content-center mt-5 flex-row-reverse">
+        <div data-aos="fade-right" className="d-flex align-items-center justify-content-center mt-5 flex-row-reverse">
           <img width={"70%"} src={productData.picture2} />
           <h4
             className={
               color != productData.backgroundColor
-                ? "text-black px-5"
-                : "text-white px-5"
+                ? "text-black px-5 d-none d-md-block"
+                : "text-white px-5 d-none d-md-block"
             }
           >
             {productData.title2}
@@ -71,7 +78,7 @@ export default function ProductDetails() {
     </div>
   );
   const textContainer = (
-    <div data-aos="fade-right" className="text-center">
+    <div  className="text-center">
       <h2 className="text-black">{productData.name}</h2>
       <p className="text-black">{productData.description}</p>
       <h5 className="text-black">USD {productData?.price}$</h5>
@@ -96,7 +103,7 @@ export default function ProductDetails() {
         <div style={{ width: "50%" }}>
           <ProductCarousel userID={id} />
         </div>
-        <div data-aos="fade-left" className="d-flex align-items-around " style={{ width: "30%" }}>
+        <div data-aos="fade-up" className="d-flex align-items-around " style={{ width: "30%" }}>
           {textContainer}
         </div>
       </div>
