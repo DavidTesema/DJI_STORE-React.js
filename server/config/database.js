@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+require("dotenv").config()
 
-const URL ="mongodb+srv://DJI-STORE:8001819@cluster0.s1raktn.mongodb.net/productsDB?retryWrites=true&w=majority";
+const URL = process.env.MONGODB_ATLAS_KEY
 
 mongoose.connect(URL, () => {
   console.log("connect to DB");
