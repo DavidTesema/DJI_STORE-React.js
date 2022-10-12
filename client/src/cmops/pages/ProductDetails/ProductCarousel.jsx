@@ -6,7 +6,7 @@ export default function ProductCarousel(props) {
   const [data, setData] = useState([]);
   const getData = async () => {
     const { data: product } = await axios.get(
-      `http://localhost:8000/${props.userID}`
+      `http://localhost:8000/products/${props.userID}`
     );
     const { images } = product;
     setData(images);

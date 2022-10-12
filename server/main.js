@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 const productRouter = require("./Routers/productRouter");
-app.use("/", productRouter);
+app.use("/products", productRouter);
 
 app.listen(8000, () => {
   console.log("server is listen to port 8000");

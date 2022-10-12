@@ -1,1 +1,1 @@
-# dji project
+# DJI Project

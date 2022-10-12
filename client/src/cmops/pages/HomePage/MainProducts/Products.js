@@ -16,8 +16,7 @@ export default function Products() {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    const { data } = await axios.get("http://localhost:8000");
-    console.log(data);
+    const { data } = await axios.get("http://localhost:8000/products");
     setData(data);
     addAllProducts();
   };
