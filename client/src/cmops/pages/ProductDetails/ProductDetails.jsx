@@ -8,12 +8,14 @@ import ProductCarousel from "./ProductCarousel";
 import {  useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 export default function ProductDetails() {
+
   useEffect(()=>{
     Aos.init({ 
       duration:3000,
     offset: 400
     })
   },[])
+  
   const { id } = useParams();
   const dispatch = useDispatch();
   const [color, setColor] = useState(false);

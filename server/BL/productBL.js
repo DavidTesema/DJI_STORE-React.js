@@ -10,8 +10,14 @@ const getDataDB = async () => {
 };
 
 const getById = async (id) => {
-  const product = await productModel.findById(id);
-  return product;
+  try {
+    console.log(id);
+    const product = await productModel.findOne(id);
+    console.log(product);
+    return product
+  } catch (error) {
+    return error;
+  }
 };
 
 const createProduct = async (obj) => {

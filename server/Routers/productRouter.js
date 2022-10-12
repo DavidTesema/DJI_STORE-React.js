@@ -12,9 +12,14 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const status = await productBL.getById(id);
-  res.json(status);
+  try{
+    const id = req.params.id;
+    const status = await productBL.getById(id);
+    res.status(201).json(status);
+  }catch(err){
+    res.status(500).json({msg:err})
+  }
+
 });
 
 router.post("/", async (req, res) => {
