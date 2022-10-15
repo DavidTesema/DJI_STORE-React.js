@@ -4,6 +4,7 @@ import CartItem from "./CartItem";
 import Button from "react-bootstrap/Button";
 import Footer from "../../features/Footer/Footer";
 import { useState, useEffect } from "react";
+import PayButton from "./PayButton";
 
 export default function Cart() {
   const selector = useSelector((state) => state);
@@ -41,7 +42,7 @@ export default function Cart() {
             <h5>Subtotal</h5>
             <h5 className="ms-4">{totalData}$ </h5>
           </div>
-          <Button variant="outline-secondary">CHECKOUT SECURELY NOW</Button>
+          <PayButton cartItem={cart}/>
           <p>Shipping:Free</p>
           <h6>We Accept</h6>
           <div>

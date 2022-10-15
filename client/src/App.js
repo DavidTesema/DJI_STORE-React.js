@@ -1,10 +1,12 @@
 import React from "react";
+import "@stripe/stripe-js";
 import HomePage from "./cmops/pages/HomePage/HomePage";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
 import ProductDetails from "./cmops/pages/ProductDetails/ProductDetails";
 import Cart from "./cmops/pages/Cart/Cart";
 import Nav from "./cmops/features/Nav/Nav";
+import CheckOutSucess from "./cmops/pages/Cart/CheckOutSucess";
 export default function App() {
   return (
     <div>
@@ -13,6 +15,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout-success" element={<CheckOutSucess/>} />
       </Routes>
     </div>
   );
