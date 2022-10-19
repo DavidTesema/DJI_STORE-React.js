@@ -1,11 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
-import { useSelector } from "react-redux";
 
 export default function PayButton({ cartItem }) {
-  const user = useSelector((state) => state.shop.cart);
-  console.log(user);
   const handleCheckout = () => {
     axios
       .post("http://localhost:8000/stripe/create-checkout-session", {

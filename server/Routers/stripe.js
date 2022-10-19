@@ -5,7 +5,6 @@ const stripe = Stripe(process.env.STRIPE_KEY);
 const router = express.Router();
 
 router.post("/create-checkout-session", async (req, res) => {
-  console.log(req.body.cartItem);
   const line_items = req.body.cartItem.map((item) => {
     return {
       price_data: {

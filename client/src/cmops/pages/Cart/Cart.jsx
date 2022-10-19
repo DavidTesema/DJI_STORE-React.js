@@ -6,6 +6,7 @@ import Footer from "../../features/Footer/Footer";
 import { useState, useEffect } from "react";
 import PayButton from "./PayButton";
 
+
 export default function Cart() {
   const selector = useSelector((state) => state);
   const cart = selector.shop.cart;
@@ -36,7 +37,7 @@ export default function Cart() {
             );
           })}
         </div>
-        <div className="right-container col-12 col-md-5 pt-5 text-center text-md-start ">
+        <div className="right-container col-12 col-md-5 pt-5 py-3 text-center text-md-start ">
           <h1>Summary</h1>
           <div className="d-flex align-content-center justify-content-center justify-content-md-start">
             <h5>Subtotal</h5>

@@ -10,13 +10,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Products() {
   const Selector = useSelector((state) => state);
-  const product = Selector.shop.products
+  const product = Selector.shop.products;
   const dispatch = useDispatch();
   const Navigate = useNavigate();
   const [data, setData] = useState([]);
-
+  const API_url = process.env.REACT_APP_API_URL;
   const getData = async () => {
-    const { data } = await axios.get("http://localhost:8000/products");
+    const { data } = await axios.get(`${API_url}`);
     setData(data);
     addAllProducts();
   };
@@ -33,7 +33,7 @@ export default function Products() {
         return (
           <Card
             onClick={() => Navigate(`/${product._id}`)}
-            className="col-3 m-4"
+            className="col-md-3 m-4"
             key={index}
             sx={{ maxWidth: 345 }}
           >

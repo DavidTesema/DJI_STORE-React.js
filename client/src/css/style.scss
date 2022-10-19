@@ -70,3 +70,18 @@
   height: 100vh;
 }
 
+.checkOut-success{
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 47%, rgba(0,0,0,1) 91%);
+      .box{
+    background-color: rgba(222, 222, 222, 0.125);border-radius: 16px;
+    flex-direction: column;
+    .fa-cart-shopping{
+      font-size: 60px;
+      color: rgb(46, 44, 44);
+    }
+    h2{
+      font-weight: bold
+    }
+  }
+}
