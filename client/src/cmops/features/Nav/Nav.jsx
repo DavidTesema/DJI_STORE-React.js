@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ShopCart from "../../pages/Cart/ShopCart";
 
 export default function Nav() {
   const [color, setColor] = useState(false);
@@ -107,13 +108,11 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-              <button
-                onClick={() => navigate("/cart")}
-                className="btn btn btn-primary rounded-pill "
-                type="submit"
-              >
-                <i class="fa-solid fa-cart-shopping"></i> {cartLength}
-              </button>
+          <button className="btn btn btn-primary rounded-pill " type="submit">
+            <div className="d-flex">
+              <ShopCart /> {cartLength}
+            </div>
+          </button>
         </div>
       </nav>
     </div>

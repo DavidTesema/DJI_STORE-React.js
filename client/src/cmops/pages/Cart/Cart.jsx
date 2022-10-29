@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import Button from "react-bootstrap/Button";
 import Footer from "../../features/Footer/Footer";
 import { useState, useEffect } from "react";
 import PayButton from "./PayButton";

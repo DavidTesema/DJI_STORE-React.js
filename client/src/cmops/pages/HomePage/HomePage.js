@@ -11,7 +11,6 @@ export default function HomePage() {
       <Products />
       <Drone3DAnimated/>
       <Footer />
-      <ShopCart/>
     </div>
   );
 }
