@@ -6,7 +6,6 @@ import ShopCart from "../../pages/Cart/ShopCart";
 export default function Nav() {
   const [color, setColor] = useState(false);
   const selector = useSelector((state) => state);
-  const cartLength = selector.shop.cart.length;
   const navigate = useNavigate();
 
   const changeColor = () => {
@@ -108,11 +107,10 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-          <button className="btn btn btn-primary rounded-pill " type="submit">
-            <div className="d-flex">
-              <ShopCart /> {cartLength}
-            </div>
-          </button>
+
+          <div className="d-flex">
+            <ShopCart />
+          </div>
         </div>
       </nav>
     </div>

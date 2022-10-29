@@ -12,6 +12,8 @@ function Example() {
 
   const selector = useSelector((state) => state);
   const cart = selector.shop.cart;
+  const cartLength = selector.shop.cart.length;
+
   const [totalData, setTotalData] = useState(0);
 
   useEffect(() => {
@@ -24,14 +26,14 @@ function Example() {
   }, [cart, totalData, setTotalData]);
   return (
     <>
-      <div onClick={handleShow}>
-        
+      <Button variant="primary  rounded-pill"  onClick={handleShow}>
       <i class="fa-solid fa-cart-shopping"></i>
-      </div>
+        {cartLength}
+      </Button>
 
       <Offcanvas show={show} placement="end" onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Cart</Offcanvas.Title>
+          <Offcanvas.Title>My Shopping Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="d-flex flex-column justify-content-between h-100">
