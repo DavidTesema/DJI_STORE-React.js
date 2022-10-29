@@ -53,7 +53,7 @@ export default function Nav() {
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#">
-                Support
+                  Support
                 </a>
               </li>
               <li className="nav-item dropdown">
@@ -106,9 +106,7 @@ export default function Nav() {
                 <a className="nav-link text-white">Cart</a>
               </li>
             </ul>
-            <div className="d-flex align-items-center" role="search">
-              <i class="fa-solid fa-magnifying-glass fs-5 text-white"></i>
-              <i class="fa-regular fa-user px-3 fs-5 text-white"></i>
+          </div>
               <button
                 onClick={() => navigate("/cart")}
                 className="btn btn btn-primary rounded-pill "
@@ -116,8 +114,6 @@ export default function Nav() {
               >
                 <i class="fa-solid fa-cart-shopping"></i> {cartLength}
               </button>
-            </div>
-          </div>
         </div>
       </nav>
     </div>

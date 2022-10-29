@@ -12,7 +12,7 @@ function CarouselProduct() {
       </Carousel.Item>
       <Carousel.Item className="header-carousel">
         <Carousel.Caption>
-          <h3>Second slide label</h3>
+          <h3>Dji Mavic 3</h3>
           <p>Power in Portability</p>
         </Carousel.Caption>
       </Carousel.Item>

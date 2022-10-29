@@ -82,7 +82,7 @@ export default function ProductDetails() {
   const textContainer = (
     <div  className="text-center">
       <h2 className="text-black">{productData.name}</h2>
-      <p className="text-black">{productData.description}</p>
+      <p className="text-black">{productData.title2}</p>
       <h5 className="text-black">USD {productData?.price}$</h5>
       <button
         onClick={() => addProduct()}
@@ -101,11 +101,11 @@ export default function ProductDetails() {
     <div>
       <Nav />
       {productDetails}
-      <div className="d-flex justify-content-around align-items-center text-container bg-white py-5">
+      <div className="d-flex flex-column flex-md-row tex justify-content-around align-items-center text-container bg-white py-5">
         <div style={{ width: "50%" }}>
           <ProductCarousel userID={id} />
         </div>
-        <div data-aos="fade-up" className="d-flex align-items-around " style={{ width: "30%" }}>
+        <div data-aos="fade-up" className="w-50 p-md-5" >
           {textContainer}
         </div>
       </div>

@@ -19,7 +19,6 @@ router.get("/:id", async (req, res) => {
   }catch(err){
     res.status(500).json({msg:err})
   }
-
 });
 
 router.post("/", async (req, res) => {
