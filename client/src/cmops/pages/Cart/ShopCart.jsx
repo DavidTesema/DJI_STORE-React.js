@@ -4,6 +4,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 import PayButton from "./PayButton";
+import CartBtn from "./CartBTnMui"
 
 function Example() {
   const [show, setShow] = useState(false);
@@ -27,8 +28,8 @@ function Example() {
   return (
     <>
       <Button variant="primary  rounded-pill"  onClick={handleShow}>
-      <i class="fa-solid fa-cart-shopping"></i>
-        {cartLength}
+      <CartBtn cartLength={cartLength} />
+  
       </Button>
 
       <Offcanvas show={show} placement="end" onHide={handleClose}>

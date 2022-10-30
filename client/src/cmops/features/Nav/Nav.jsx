@@ -52,7 +52,7 @@ export default function Nav() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#">
+                <a onClick={()=> navigate("/support")} className="nav-link text-white" href="#">
                   Support
                 </a>
               </li>
@@ -102,12 +102,8 @@ export default function Nav() {
                   </li>
                 </ul>
               </li>
-              <li onClick={() => navigate("/cart")} className="nav-item">
-                <a className="nav-link text-white">Cart</a>
-              </li>
             </ul>
           </div>
-
           <div className="d-flex">
             <ShopCart />
           </div>

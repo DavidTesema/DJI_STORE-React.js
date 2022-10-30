@@ -7,6 +7,11 @@ import { useParams } from "react-router-dom";
 import ProductCarousel from "./ProductCarousel";
 import {  useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+
+// React Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function ProductDetails() {
 
   useEffect(()=>{
@@ -96,6 +101,16 @@ export default function ProductDetails() {
   const addProduct = () => {
     const action = { type: "ADD_TO_CART", payload: productData._id };
     dispatch(action)
+    toast.success('Success!', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
   return (
     <div>
@@ -108,6 +123,7 @@ export default function ProductDetails() {
         <div data-aos="fade-up" className="w-50 p-md-5" >
           {textContainer}
         </div>
+        <ToastContainer />
       </div>
       <Footer />
     </div>
