@@ -24,6 +24,10 @@ export default function Products() {
     const action = { type: "ADD_ALL_PRODUCT", payload: data };
     dispatch(action);
   };
+
+  const scrollEvent = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
   useEffect(() => {
     getData();
   }, [data.length]);
@@ -32,7 +36,10 @@ export default function Products() {
       {product.map((product, index) => {
         return (
           <Card
-            onClick={() => Navigate(`/${product._id}`)}
+            onClick={() =>{
+               Navigate(`/${product._id}`)
+               scrollEvent()
+              }}
             className="col-md-3 m-4"
             key={index}
             sx={{ maxWidth: 345 }}
