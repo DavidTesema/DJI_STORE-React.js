@@ -78,7 +78,7 @@ export default function Nav() {
                     </a>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    <a onClick={() => navigate("/")} className="dropdown-item" href="#">
                       Newsroom
                     </a>
                   </li>
