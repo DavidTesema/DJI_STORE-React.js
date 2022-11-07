@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 export default function PayButton({ cartItem }) {
   const handleCheckout = () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/stripe/create-checkout-session`, {
+      .post("http://localhost:8000/stripe/create-checkout-session", {
         cartItem,
       })
       .then((res) => {
