@@ -1,7 +1,7 @@
 import React from "react";
 import "@stripe/stripe-js";
-import HomePage from "./cmops/pages/HomePage/HomePage";
 import "./css/style.css";
+import HomePage from "./cmops/pages/HomePage/HomePage";
 import { Routes, Route } from "react-router-dom";
 import ProductDetails from "./cmops/pages/ProductDetails/ProductDetails";
 import Nav from "./cmops/features/Nav/Nav";
