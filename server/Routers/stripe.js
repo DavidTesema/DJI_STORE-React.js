@@ -69,8 +69,8 @@ router.post("/create-checkout-session", async (req, res) => {
         ],
     line_items,
     mode: "payment",
-    success_url: `${process.env.CLIENT_URL}/checkout-success`,
-    cancel_url: `${process.env.CLIENT_URL}`,
+    success_url: `https://dji-store.netlify.app/checkout-success`,
+    cancel_url: `https://dji-store.netlify.app`,
   });
 
   res.send({ url: session.url });

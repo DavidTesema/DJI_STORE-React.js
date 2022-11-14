@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 export default function PayButton({ cartItem }) {
   const handleCheckout = () => {
     axios
-      .post(`http://localhost:8000/stripe/create-checkout-session`, {
+      .post(`https://dji-store.netlify.app/stripe/create-checkout-session`, {
         cartItem,
       })
       .then((res) => {
