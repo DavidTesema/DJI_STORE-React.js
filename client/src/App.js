@@ -1,12 +1,12 @@
 import React from "react";
 import "@stripe/stripe-js";
 import "./css/style.css";
-import HomePage from "./cmops/pages/HomePage/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import { Routes, Route } from "react-router-dom";
-import ProductDetails from "./cmops/pages/ProductDetails/ProductDetails";
-import Nav from "./cmops/features/Nav/Nav";
-import CheckOutSucess from "./cmops/pages/Cart/CheckOutSucess";
-import Support from "./cmops/pages/Support/Support";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import Nav from "./components/Nav/Nav";
+import CheckOutSucess from "./pages/Cart/CheckOutSucess";
+import Support from "./pages/Support/Support";
 export default function App() {
   return (
     <div>
