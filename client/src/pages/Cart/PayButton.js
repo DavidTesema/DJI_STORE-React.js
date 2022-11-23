@@ -17,7 +17,7 @@ export default function PayButton({ cartItem }) {
   };
   return (
     <div>
-      <Button onClick={() => handleCheckout()} variant="outline-secondary">CHECKOUT SECURELY NOW</Button>
+      <Button onClick={() => handleCheckout()} variant="outline-success">CHECKOUT SECURELY NOW</Button>
     </div>
   );
 }

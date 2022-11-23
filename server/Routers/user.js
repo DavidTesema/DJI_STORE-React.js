@@ -1,4 +1,4 @@
-const User = require("../models/USer");
+const User = require("../models/user");
 const {
   verifyTokenAndAuthorization,
 } = require("./verifyToken");

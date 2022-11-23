@@ -27,7 +27,7 @@ function Example() {
   }, [cart, totalData, setTotalData]);
   return (
     <>
-      <Button variant="primary  rounded-pill"  onClick={handleShow}>
+      <Button variant="primary  rounded-pill py-0 px-2"  onClick={handleShow}>
       <CartBtn cartLength={cartLength} />
   
       </Button>

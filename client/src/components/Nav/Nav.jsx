@@ -1,3 +1,5 @@
+import AvatarAccount from "../Nav/AvatarMui/Avater";
+import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -52,7 +54,11 @@ export default function Nav() {
                 </a>
               </li>
               <li className="nav-item">
-                <a onClick={()=> navigate("/support")} className="nav-link text-white" href="#">
+                <a
+                  onClick={() => navigate("/support")}
+                  className="nav-link text-white"
+                  href="#"
+                >
                   Support
                 </a>
               </li>
@@ -106,6 +112,14 @@ export default function Nav() {
           </div>
           <div className="d-flex">
             <ShopCart />
+            <div
+            className="px-2"
+              onClick={() =>
+                localStorage.length > 0 ? "" : navigate("/signIn")
+              }
+            >
+              {localStorage.length > 0 ? <AvatarAccount /> : <Avatar />}
+            </div>
           </div>
         </div>
       </nav>
