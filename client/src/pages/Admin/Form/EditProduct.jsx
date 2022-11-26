@@ -2,24 +2,33 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
-function AddProduct() {
-  const [data, setData] = useState({
+function UpdateProduct() {
+  const { id } = useParams();
+  const navigate = useNavigate()
+  const [data, setaDta] = useState({
     name: "",
     price: "",
     img: "",
     description: "",
   });
+
   const handleInput = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    setaDta({ ...data, [e.target.name]: e.target.value });
   };
-  const sandData = async () => {
-    const res = await axios.post(`${process.env.REACT_APP_API_URL}`, data);
-    return res
+  console.log(data);
+  console.log(id);
+  const UpdateData = async () => {
+    const res = await axios.put(`${process.env.REACT_APP_API_URL}/${id}`, data);
+    navigate("/")
+    return res;
   };
 
+
   return (
-    <Form>
+    <Form className="container mt-5">
+        <h1>Edit Product</h1>
       <Form.Group className="mb-3" controlId="formGroupEmail">
         <Form.Label> Name</Form.Label>
         <Form.Control
@@ -56,9 +65,11 @@ function AddProduct() {
           placeholder="Description"
         />
       </Form.Group>
-      <Button onClick={()=> sandData()} variant="primary">Add product</Button>
+      <Button onClick={() => UpdateData()} variant="primary">
+        Add product
+      </Button>
     </Form>
   );
 }
 
-export default AddProduct;
+export default UpdateProduct;

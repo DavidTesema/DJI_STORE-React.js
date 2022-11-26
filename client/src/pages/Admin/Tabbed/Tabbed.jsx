@@ -17,10 +17,10 @@ function UncontrolledExample() {
         <Table array={product} />
       </Tab>
       <Tab eventKey="profile" title="Add product">
-        <AddProduct buttonName={"Add Product"} />
+        <AddProduct  />
       </Tab>
-      <Tab eventKey="Edit" title="Edit">
-        <AddProduct buttonName={"Edit Product"} />
+      <Tab eventKey="Users" title="Users">
+        <AddProduct />
       </Tab>
     </Tabs>
   );

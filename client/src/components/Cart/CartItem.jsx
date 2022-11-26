@@ -24,7 +24,7 @@ export default function CartItem({ itemData }) {
     <div>
       <div className="d-flex">
         <div>
-          <img height={"100px"} src={itemData.images[0].img} />
+          <img height={"100px"} src={itemData?.img} />
         </div>
         <div>
           <div className="d-flex justify-content-between">

@@ -1,8 +1,13 @@
 import Table from "react-bootstrap/Table";
-import Button from 'react-bootstrap/Button';
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function ProductsTable({ array }) {
+  const navigate = useNavigate()
+  const deleteProduct = async (id) => {
+    const res = await axios.delete(`${process.env.REACT_APP_API_URL}/${id}`);
+    return res;
+  };
   return (
     <Table striped bordered hover>
       <thead>
@@ -17,13 +22,23 @@ function ProductsTable({ array }) {
       {array.map((item, index) => {
         return (
           <>
-            <tbody>
+            <tbody key={index}>
               <tr>
-                <td><img height={"60px"} src={item.images[0].img} alt="drone" /></td>
+                <td>
+                  <img height={"60px"} src={item.img} alt="drone" />
+                </td>
                 <td>{item.name}</td>
                 <td>{item.price}$</td>
-                <td><Button eventKey="Edit" variant="success">Edit</Button></td>
-                <td><Button variant="danger">X</Button></td>
+                <td>
+                  <Button onClick={() => navigate(`/edit-product/${item._id}`)}  eventKey="Edit" variant="success">
+                    Edit
+                  </Button>
+                </td>
+                <td>
+                  <Button onClick={() => deleteProduct(item._id)} variant="danger">
+                    X
+                  </Button>
+                </td>
               </tr>
             </tbody>
           </>

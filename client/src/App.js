@@ -12,6 +12,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import Admin from "./pages/Admin/Admin";
+import EditProduct from "./pages/Admin/Form/EditProduct";
 
 export default function App() {
   const dispatch = useDispatch()
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/signIn" element={<SignInSide />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/edit-product/:id" element={<EditProduct />} />
         </Routes>
       </SkeletonTheme>
     </div>

@@ -41,7 +41,7 @@ export default function Products() {
               <CardMedia
                 component="img"
                 height="300"
-                image={product?.images[0].img}
+                image={product?.img}
                 alt="green iguana"
               />
               <CardContent>
