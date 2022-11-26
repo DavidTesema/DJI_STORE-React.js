@@ -13,10 +13,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import dronesImages from "./droneImgArray.json";
 import { auth } from "../../fireBase/fireBase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { GoogleButton } from "react-google-button";
+
 
 import {
   signInWithEmailAndPassword,
@@ -46,6 +46,8 @@ const theme = createTheme();
 
 export default function SignInSide() {
   const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
+
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -53,32 +55,23 @@ export default function SignInSide() {
     try {
       const user = await signInWithEmailAndPassword(auth, Email, Password);
       navigate("/");
-      console.log(user);
+      localStorage.setItem("email", user.user.email);
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  const provider = new GoogleAuthProvider();
-
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         navigate("/");
-        const name = result.user.displayName;
-        const email = result.user.email;
-        const profilePic = result.user.photoURL;
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
-        localStorage.setItem("profilePic", profilePic);
+        localStorage.setItem("email", result.user.email);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  const drones =
-    dronesImages.images[Math.floor(Math.random() * dronesImages.images.length)];
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -95,7 +88,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${drones})`,
+            backgroundImage: `url(https://katzr.net/6a449d)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",

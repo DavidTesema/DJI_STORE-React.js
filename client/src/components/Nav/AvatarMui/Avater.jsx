@@ -77,9 +77,6 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem>
-          <Avatar /> {localStorage.getItem("name")}
-        </MenuItem>
-        <MenuItem>
           <Avatar /> {localStorage.getItem("email")}
         </MenuItem>
         <Divider />

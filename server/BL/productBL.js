@@ -1,9 +1,9 @@
-const productModel = require("../models/productModel");
+const productModel = require("../models/product");
 
 const getDataDB = async () => {
   try {
     const data = await productModel.find({});
-    return data
+    return data;
   } catch (error) {
     return error;
   }
@@ -11,10 +11,8 @@ const getDataDB = async () => {
 
 const getById = async (id) => {
   try {
-    console.log(id);
-    const product = await productModel.findOne(id);
-    console.log(product);
-    return product
+    const product = await productModel.findById(id);
+    return product;
   } catch (error) {
     return error;
   }
@@ -30,4 +28,27 @@ const createProduct = async (obj) => {
   }
 };
 
-module.exports = { getDataDB ,getById ,createProduct};
+const updateProduct = async (id, obj) => {
+  try {
+    await productModel.findByIdAndUpdate(id, obj);
+    return "Updated";
+  } catch (error) {
+    throw `Error: ${error}`;
+  }
+};
+const deleteProduct = async (id) => {
+  try {
+    await productModel.findByIdAndDelete(id);
+    return "Deleted";
+  } catch (error) {
+    throw `Error: ${error}`;
+  }
+};
+
+module.exports = {
+  getDataDB,
+  getById,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+};

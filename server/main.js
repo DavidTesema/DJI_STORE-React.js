@@ -6,7 +6,7 @@ require("./config/database");
 app.use(express.json())
 
 
-const productRouter = require("./Routers/productRouter");
+const productRouter = require("./Routers/product");
 app.use("/api/products", productRouter);
 
 const stripe = require("./Routers/stripe")

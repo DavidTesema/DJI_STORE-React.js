@@ -1,9 +1,11 @@
 import AvatarAccount from "../Nav/AvatarMui/Avater";
-import { Avatar } from "@mui/material";
+import { Avatar, Tooltip } from "@mui/material";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import ShopCart from "../../pages/Cart/ShopCart";
+import ShopCart from "../../components/Cart/ShopCart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Nav() {
   const [color, setColor] = useState(false);
@@ -48,7 +50,7 @@ export default function Nav() {
                   onClick={() => navigate("/")}
                   className="nav-link active text-white"
                   aria-current="page"
-                  href="#"
+                  href="#drone"
                 >
                   Drone
                 </a>
@@ -113,7 +115,7 @@ export default function Nav() {
           <div className="d-flex">
             <ShopCart />
             <div
-            className="px-2"
+              className="px-2"
               onClick={() =>
                 localStorage.length > 0 ? "" : navigate("/signIn")
               }

@@ -58,8 +58,12 @@
 .main-product {
   font-family: T;
 }
-.background-black{
-  background: linear-gradient(180deg, rgba(0,0,0,0.9556197478991597) 97%, rgba(255,255,255,1) 100%);
+.background-black {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9556197478991597) 97%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 .cart-container {
   // background-image: url("https://images.pexels.com/photos/2050718/pexels-photo-2050718.jpeg?auto=compress&cs=tinysrgb&w=1600");
@@ -70,23 +74,29 @@
   height: 100vh;
 }
 
-.checkOut-success{
+.checkOut-success {
   height: 100vh;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 47%, rgba(0,0,0,1) 91%);
-      .box{
-    background-color: rgba(222, 222, 222, 0.125);border-radius: 16px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 47%,
+    rgba(0, 0, 0, 1) 91%
+  );
+  .box {
+    background-color: rgba(222, 222, 222, 0.125);
+    border-radius: 16px;
     flex-direction: column;
-    .fa-cart-shopping{
+    .fa-cart-shopping {
       font-size: 60px;
       color: rgb(46, 44, 44);
     }
-    h2{
-      font-weight: bold
+    h2 {
+      font-weight: bold;
     }
   }
 }
-.support{
-  .support-img-container{
+.support {
+  .support-img-container {
     background-image: url(../../public//images//Support1.jpg);
     height: 80vh;
     width: 100%;
@@ -95,7 +105,7 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
   }
-  .box-container{
+  .box-container {
     height: 390px;
     margin: 3px;
     text-align: center;
@@ -103,12 +113,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0,0,0,.04);
-    .fa-phone{
+    background-color: rgba(0, 0, 0, 0.04);
+    .fa-phone {
       font-size: 40px;
     }
-    .fa-headphones{
+    .fa-headphones {
       font-size: 40px;
     }
+  }
+}
+.card-skeleton {
+ padding-top: 10px;
+  .top-col {
+    width: 300px;
+    height: 300px;
+  }
+  .bottom-col {
+    margin-top: 5px;
   }
 }

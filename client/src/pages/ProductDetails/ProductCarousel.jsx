@@ -6,7 +6,7 @@ export default function ProductCarousel(props) {
   const selector = useSelector(state => state)
   const allProducts = selector.shop.products;
   const productData = allProducts?.find((item) => item._id === props.userID);
-  const images = productData.images
+  const images = productData?.images
   
   const displayData = images?.map((item, index) => {
     return (

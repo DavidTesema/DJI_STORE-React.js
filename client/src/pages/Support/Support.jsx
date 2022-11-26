@@ -1,10 +1,12 @@
 import React from "react";
 import { RiMessageFill } from "react-icons/ri";
 import Footer from "../../components/Footer/Footer"
+import Nav from "../../components/Nav/Nav";
 
 export default function Support() {
   return (
     <div className="support">
+      <Nav/>
       <div className="support-img-container text-center d-flex justify-content-center align-items-center">
         <div className="text-container">
           <h1>Support</h1>
