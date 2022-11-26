@@ -47,6 +47,15 @@ export default function Nav() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <a
+                  onClick={() => navigate("/admin")}
+                  className="nav-link active text-white"
+                  aria-current="page"
+                  >
+                  {localStorage.getItem("ID")== process.env.REACT_APP_ADMIN_UID?"Admin":""}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
                   onClick={() => navigate("/")}
                   className="nav-link active text-white"
                   aria-current="page"

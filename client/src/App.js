@@ -11,6 +11,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import Admin from "./pages/Admin/Admin";
 
 export default function App() {
   const dispatch = useDispatch()
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/checkout-success" element={<CheckOutSucess />} />
           <Route path="/signIn" element={<SignInSide />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </SkeletonTheme>
     </div>

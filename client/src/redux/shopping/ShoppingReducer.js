@@ -24,7 +24,6 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           : [...state.cart, { ...item, qty: 1 }],
       };
     case actionType.REMOVE_FROM_CART:
-      console.log(action.payload)
       return {
         ...state,
         cart: state.cart.filter((item) => item._id !== action.payload),

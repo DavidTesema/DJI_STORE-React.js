@@ -20,7 +20,7 @@ export default function Drone3DAnimated() {
           drag the image to view.
         </p>
         <Button
-          onClick={() => navigate("/63302f9ac0490a42e5d8e3b7")}
+          onClick={() => navigate("/637f960101b1004db6d84d3d")}
           variant="outline-primary"
         >
           See More

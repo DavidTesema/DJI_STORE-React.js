@@ -17,12 +17,7 @@ import { auth } from "../../fireBase/fireBase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { GoogleButton } from "react-google-button";
 
-
-import {
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Copyright(props) {
   return (
@@ -65,13 +60,14 @@ export default function SignInSide() {
     signInWithPopup(auth, provider)
       .then((result) => {
         navigate("/");
+        console.log(result.user.reloadUserInfo.localId);
         localStorage.setItem("email", result.user.email);
+        localStorage.setItem("ID",result.user.reloadUserInfo.localId);
       })
       .catch((error) => {
         console.log(error);
       });
   };
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -155,11 +151,7 @@ export default function SignInSide() {
                 <Grid item xs sx={{ mt: 3, mb: 2 }}>
                   <GoogleButton onClick={signInWithGoogle} />
                 </Grid>
-                <Grid
-                  style={{ display: "flex", alignItems: "center" }}
-                  item
-                  
-                >
+                <Grid style={{ display: "flex", alignItems: "center" }} item>
                   <Link
                     onClick={() => navigate("/signUp")}
                     href="#"
