@@ -7,12 +7,6 @@ import {
   MDBIcon,
 } from "mdb-react-ui-kit";
 
-// export default function Footer() {
-//   return (
-//     <div>Footer</div>
-//   )
-// }
-
 export default function Footer() {
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted  py-3">
@@ -33,7 +27,7 @@ export default function Footer() {
         
       </section>
      
-      <section className="">
+      <section >
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">

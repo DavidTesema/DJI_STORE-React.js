@@ -14,18 +14,17 @@ export default function Products() {
   const Selector = useSelector((state) => state);
   const product = Selector.shop.products;
   const Navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
-  
+
   const scrollEvent = () => {
     window.scroll({ top: 0, behavior: "smooth" });
   };
-
   return (
     <div
       id="drone"
       className="card-container d-flex flex-wrap justify-content-center"
     >
-      {/* {loading && <CardSkeleton/>} */}
+      {/* Placeholder Card */}
+      {Selector.shop.products.length > 0 ? "" : <CardSkeleton />}
       {product?.map((product, index) => {
         return (
           <Card

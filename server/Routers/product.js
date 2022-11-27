@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try{
     const id  = req.params.id;
-    console.log(id);
     const status = await productBL.getById(id);
     res.status(201).json(status);
   }catch(err){

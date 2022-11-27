@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import "@stripe/stripe-js";
 import "./css/style.css";
 import HomePage from "./pages/HomePage/HomePage";
@@ -15,14 +15,17 @@ import Admin from "./pages/Admin/Admin";
 import EditProduct from "./pages/Admin/Form/EditProduct";
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
+
   const dispatch = useDispatch()
   const API_url = process.env.REACT_APP_API_URL;
 
   const getData = async () => {
     const { data } = await axios.get(`${API_url}`);
+    setLoading(false)
     addAllProducts(data);
   };
-  
+  console.log(loading);
   const addAllProducts = (data) => {
     const action = { type: "ADD_ALL_PRODUCT", payload: data };
     dispatch(action);

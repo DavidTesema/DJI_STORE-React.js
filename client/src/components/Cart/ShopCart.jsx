@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import PayButton from "./PayButton";
 import CartBtn from "./CartBTnMui"
 
-function Example() {
+function ShopCart() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,7 +29,6 @@ function Example() {
     <>
       <Button variant="primary  rounded-pill py-0 px-2"  onClick={handleShow}>
       <CartBtn cartLength={cartLength} />
-  
       </Button>
 
       <Offcanvas show={show} placement="end" onHide={handleClose}>
@@ -65,4 +64,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default ShopCart;
