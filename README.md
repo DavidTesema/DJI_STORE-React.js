@@ -1,6 +1,6 @@
-# Dji Store
+# DJI STORE
 # Description
-* An E-commerce store of drones, the leader in the development and production of innovative photography technology for private and commercial use.
+* E-commerce store of drones, the leader in the development and production of innovative photography technology for private and commercial use.
 # Project Flow
 * Difficulties:
 1. Create dynamism on the site between products
