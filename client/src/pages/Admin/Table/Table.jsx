@@ -2,11 +2,18 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 function ProductsTable({ array }) {
   const navigate = useNavigate()
+  const dispatch =useDispatch()
   const deleteProduct = async (id) => {
     const res = await axios.delete(`${process.env.REACT_APP_API_URL}/${id}`);
     return res;
+  };
+  const removeProductFromRedux = (id) => {
+    const action = { type: "REMOVE_PRODUCT", payload: id };
+    dispatch(action);
   };
   return (
     <Table striped bordered hover>
@@ -19,7 +26,7 @@ function ProductsTable({ array }) {
           <th>Delete</th>
         </tr>
       </thead>
-      {array.map((item, index) => {
+      {array?.map((item, index) => {
         return (
           <>
             <tbody key={index}>
@@ -35,7 +42,10 @@ function ProductsTable({ array }) {
                   </Button>
                 </td>
                 <td>
-                  <Button onClick={() => deleteProduct(item._id)} variant="danger">
+                  <Button onClick={() => {
+                    deleteProduct(item._id)
+                    removeProductFromRedux(item._id)
+                    }} variant="danger">
                     X
                   </Button>
                 </td>

@@ -25,7 +25,6 @@ export default function App() {
     setLoading(false)
     addAllProducts(data);
   };
-  console.log(loading);
   const addAllProducts = (data) => {
     const action = { type: "ADD_ALL_PRODUCT", payload: data };
     dispatch(action);

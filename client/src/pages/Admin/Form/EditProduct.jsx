@@ -17,11 +17,9 @@ function UpdateProduct() {
   const handleInput = (e) => {
     setaDta({ ...data, [e.target.name]: e.target.value });
   };
-  console.log(data);
-  console.log(id);
   const UpdateData = async () => {
     const res = await axios.put(`${process.env.REACT_APP_API_URL}/${id}`, data);
-    navigate("/")
+    navigate("/admin")
     return res;
   };
 

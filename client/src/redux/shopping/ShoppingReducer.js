@@ -10,6 +10,12 @@ const shopReducer = (state = INITIAL_STATE, action) => {
     case actionType.ADD_ALL_PRODUCT:
       return { ...state, products: action.payload };
 
+    case actionType.REMOVE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter((item) => item._id !== action.payload),
+      };
+
     case actionType.ADD_TO_CART:
       const item = state.products.find((prod) => prod._id === action.payload);
       const inCart = state.cart.find((item) =>
@@ -18,9 +24,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cart: inCart
-          ? state.cart.map((item) =>
-              item.id === action.payload.id && item
-            )
+          ? state.cart.map((item) => item.id === action.payload.id && item)
           : [...state.cart, { ...item, qty: 1 }],
       };
     case actionType.REMOVE_FROM_CART:

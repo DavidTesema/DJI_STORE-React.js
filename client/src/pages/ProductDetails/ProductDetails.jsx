@@ -35,13 +35,9 @@ export default function ProductDetails() {
       }
     >
       <video className="first-video" src={productData?.video1} autoPlay muted />
-      {/* <div className="content d-none d-xxl-flex mt-5 ">
+      <div className="content d-none d-xxl-flex mt-5 ">
         <p>{productData?.name}</p>
-        <h5>Born to Fly</h5>
-        <button type="button" class="btn btn-outline-primary fw-bold">
-          Buy Now
-        </button>
-      </div> */}
+      </div>
       <section className="main-product">
         <div
           data-aos="fade-left"

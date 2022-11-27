@@ -13,14 +13,14 @@ function UncontrolledExample() {
       id="uncontrolled-tab-example"
       className="mb-3"
     >
-      <Tab eventKey="home" title="Home">
+      <Tab eventKey="profile" title="Home">
         <Table array={product} />
       </Tab>
-      <Tab eventKey="profile" title="Add product">
+      <Tab eventKey="Add product" title="Add product">
         <AddProduct  />
       </Tab>
       <Tab eventKey="Users" title="Users">
-        <AddProduct />
+        Table
       </Tab>
     </Tabs>
   );

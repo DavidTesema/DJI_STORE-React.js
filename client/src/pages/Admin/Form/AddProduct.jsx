@@ -2,8 +2,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function AddProduct() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     price: "",
@@ -13,10 +17,12 @@ function AddProduct() {
   const handleInput = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
   const sandData = async () => {
     const res = await axios.post(`${process.env.REACT_APP_API_URL}`, data);
-    return res
+    return res;
   };
+
 
   return (
     <Form>
@@ -56,7 +62,15 @@ function AddProduct() {
           placeholder="Description"
         />
       </Form.Group>
-      <Button onClick={()=> sandData()} variant="primary">Add product</Button>
+      <Button
+        onClick={() => {
+          sandData() 
+          navigate("/admin")
+        }}
+        variant="primary"
+      >
+        Add product
+      </Button>
     </Form>
   );
 }
