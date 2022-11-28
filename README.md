@@ -1,8 +1,8 @@
 # DJI STORE
 # Description
 * E-commerce store of drones, the leader in the development and production of innovative photography technology for private and commercial use.
-Server side: servers developed by Node.js and Express, manage databases implemented by MongoDB Atlas and object modeling performed by Mongoose.
-Client side: Developed in React.js and Redux, the design is realized with Material-UI,Three.js and Scss.
+* Server side: servers developed by Node.js and Express, manage databases implemented by MongoDB Atlas and object modeling performed by Mongoose.
+* Client side: Developed in React.js and Redux, the design is realized with Material-UI,Three.js and Scss.
 # Project Flow
 * Difficulties:
 1. Create dynamism on the site between products
