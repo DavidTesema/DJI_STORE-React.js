@@ -8,7 +8,7 @@
 1. Create dynamism on the site between products
 2. How to use correctly in state management like Redux
 * What was goood:
-1. Creating the ui and ux
+1. Creating the UI and UX
 2. Possibility of secure payments on the website
 3. Using three js library to display elements in 3D
 #  Design
