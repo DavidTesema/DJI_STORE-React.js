@@ -2,18 +2,6 @@
 
 E-commerce store of drones, the leader in the development and production of innovative photography technology for private and commercial use.
 
-## Technologies Used
-
-- <strong> Node.js:</strong> A JavaScript runtime for building server-side applications.
-- <strong>Express:</strong> A minimalist web application framework for Node.js.
-- <strong>MongoDB Atlas:</strong> A cloud-based database service for storing and retrieving data.
-- <strong>Mongoose:</strong> An Object Data Modeling (ODM) library for MongoDB and Node.js.
-- <strong>React.js:</strong> A JavaScript library for building user interfaces.
-- <strong> Redux:</strong> A predictable state management library for JavaScript applications.
-- <strong>Material-UI:</strong> A React UI framework implementing Google's Material Design.
-- <strong>Three.js:</strong> A JavaScript library for creating and displaying 3D graphics on the web.
-- <strong>SCSS:</strong> A CSS preprocessor for efficient and modular styling.
-
 ## Notable Features
 
 * Product Catalog: Browse and explore a wide range of DJI drones and accessories with detailed information, including specifications, pricing, and availability.
@@ -34,6 +22,19 @@ These features enhance the usability, functionality, and security of the E-comme
 The BLL and DAL components provide a structured and modular architecture. The BLL implements business rules, while the DAL handles data access, ensuring separation of concerns and improving code organization and maintainability.
 
 These components, along with Node.js, Express, MongoDB Atlas, React.js, Redux, Material-UI, Three.js, and SCSS, work together to create a robust e-commerce solution for DJI drones.
+
+## Technologies Used
+
+- <strong> Node.js:</strong> A JavaScript runtime for building server-side applications.
+- <strong>Express:</strong> A minimalist web application framework for Node.js.
+- <strong>MongoDB Atlas:</strong> A cloud-based database service for storing and retrieving data.
+- <strong>Mongoose:</strong> An Object Data Modeling (ODM) library for MongoDB and Node.js.
+- <strong>React.js:</strong> A JavaScript library for building user interfaces.
+- <strong> Redux:</strong> A predictable state management library for JavaScript applications.
+- <strong>Material-UI:</strong> A React UI framework implementing Google's Material Design.
+- <strong>Three.js:</strong> A JavaScript library for creating and displaying 3D graphics on the web.
+- <strong>SCSS:</strong> A CSS preprocessor for efficient and modular styling.
+
 #  Design
 
 ![1](https://user-images.githubusercontent.com/105584546/204162830-7228ab0e-0573-4aca-8b8b-22822a6206ce.jpg)
